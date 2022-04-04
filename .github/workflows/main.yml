@@ -15,3 +15,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "m1p9mean-herytoavina" #Must be unique in Heroku
           heroku_email: "aherytoavina@gmail.com"
+          appdir: "node-back" # <- This will point to the api folder in your project
