@@ -10,7 +10,7 @@ const baseUrl = 'https://m1p9mean-herytoavina.herokuapp.com/plats';
 export class PlatsService {
 
   constructor(private http: HttpClient) { }
-  getAll(): Observable<Plat[]> {
+  getAll(): Observable<any> {
     return this.http.get<Plat[]>(baseUrl);
   }
   get(id: any): Observable<Plat> {
@@ -28,6 +28,4 @@ export class PlatsService {
   deleteAll(): Observable<any> {
     return this.http.delete(baseUrl);
   }
-  findByTitle(title: any): Observable<Plat[]> {
-    return this.http.get<Plat[]>(`${baseUrl}?title=${title}`);
-  }}
+}

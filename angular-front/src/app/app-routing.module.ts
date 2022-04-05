@@ -6,8 +6,8 @@ import { PlatsListComponent } from './components/plats-list/plats-list.component
 
 const routes: Routes = [
   { path: '', redirectTo: 'tutorials', pathMatch: 'full' },
-  { path: 'tutorials', component: PlatsListComponent },
-  { path: 'tutorials/:id', component: PlatDetailsComponent },
+  { path: 'plats', component: PlatsListComponent },
+  { path: 'plats/:id', component: PlatDetailsComponent },
   { path: 'add', component: AddPlatComponent }
 ];
 @NgModule({
