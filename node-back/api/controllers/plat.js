@@ -64,8 +64,8 @@ exports.create_plat = (req, res, next) => {
 };
 
 exports.get_plat_by_id = (req, res, next) => {
-    const id = req.params.idAvion;
-    Avion.findById(id)
+    const id = req.params.idPlat;
+    Plat.findById(id)
     .select('_id nomPlat prixPlat descriptionPlat imgPlat')
     .exec()
     .then(doc =>{
@@ -84,7 +84,7 @@ exports.update_plat = (req, res, next) => {
     for(const ops of req.body){
         updateOps[ops.propName] = ops.value;
     }
-    Avion.updateOne({_id: id}, { $set: updateOps })
+    Plat.updateOne({_id: id}, { $set: updateOps })
     .exec()
     .then(result => {
         res.status(200).json(result);
@@ -99,7 +99,7 @@ exports.update_plat = (req, res, next) => {
 
 exports.delete_avion = (req, res, next) => {
     const id = req.params.idPlat;
-    Avion.remove({_id: id})
+    Plat.remove({_id: id})
     .exec()
     .then(result => {
         res.status(200).json(result);
