@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 
 
 const platRoutes = require('./api/routes/plat');
+const userRoutes = require('./api/routes/user');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -25,7 +26,8 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use('/plats', platRoutes);
+app.use('/api/plats', platRoutes);
+app.use('/api/users', userRoutes); 
 
 mongoose.connect(
     "mongodb+srv://dbUser:dbUserPassword@cluster0.3wtmc.mongodb.net/ekaly?retryWrites=true&w=majority",{
