@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 // const mongoose = require("mongoose");
 
 
-// const platRoutes = require('./api/routes/plat.route');
+const platRoutes = require('./api/routes/plat.route');
 const dbConfig = require('./api/config/db.config');
 const db = require("./api/models");
 
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     next();
   });
 
-// app.use('/api/plats', platRoutes);
+app.use('/api/plats', platRoutes);
 // require('./api/routes/auth.routes')(app);
 // require('./api/routes/user.route')(app);
 
