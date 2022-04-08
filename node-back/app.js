@@ -2,14 +2,12 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
 
-const platRoutes = require('./api/routes/plat.route');
-// const userRoutes = require('./api/routes/user.route');
-// const authRoutes = require('./api/routes/auth.routes');
-const dbConfig = require('./api/config/db.config');
-const db = require("./api/models");
+// const platRoutes = require('./api/routes/plat.route');
+// const dbConfig = require('./api/config/db.config');
+// const db = require("./api/models");
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -29,22 +27,22 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use('/api/plats', platRoutes);
-require('./api/routes/auth.routes')(app);
-require('./api/routes/user.route')(app);
+// app.use('/api/plats', platRoutes);
+// require('./api/routes/auth.routes')(app);
+// require('./api/routes/user.route')(app);
 
-db.mongoose.connect(
-    `mongodb+srv://${dbConfig.USERNAME}:${dbConfig.PWD}@cluster0.3wtmc.mongodb.net/${dbConfig.DB}?retryWrites=true&w=majority`,{
-      useNewUrlParser: true, 
-      useUnifiedTopology: true 
-    }
-  ).then(() => {
-    console.log("Successfully connect to MongoDB.");
-  })
-  .catch(err => {
-    console.error("Connection error", err);
-    process.exit();
-  });
+// db.mongoose.connect(
+//     `mongodb+srv://${dbConfig.USERNAME}:${dbConfig.PWD}@cluster0.3wtmc.mongodb.net/${dbConfig.DB}?retryWrites=true&w=majority`,{
+//       useNewUrlParser: true, 
+//       useUnifiedTopology: true 
+//     }
+//   ).then(() => {
+//     console.log("Successfully connect to MongoDB.");
+//   })
+//   .catch(err => {
+//     console.error("Connection error", err);
+//     process.exit();
+//   });
 
 
 app.get("/", (req, res) => {
