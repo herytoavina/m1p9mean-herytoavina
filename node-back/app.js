@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 
 const platRoutes = require('./api/routes/plat.route');
-// const authRoutes = require('./api/routes/auth.route');
+const authRoutes = require('./api/routes/auth.route');
 const userRoutes = require('./api/routes/user.route');
 const dbConfig = require('./api/config/db.config');
 const db = require("./api/models");
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
   });
 
 app.use('/api/plats', platRoutes);
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 
 db.mongoose.connect(
