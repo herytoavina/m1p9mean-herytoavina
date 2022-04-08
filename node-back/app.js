@@ -30,8 +30,8 @@ app.use((req, res, next) => {
   });
 
 app.use('/api/plats', platRoutes);
-app.use('/api/auth', authRoutes);
-app.use('/api/user', userRoutes);
+// app.use('/api/auth', authRoutes);
+// app.use('/api/user', userRoutes);
 
 db.mongoose.connect(
     `mongodb+srv://${dbConfig.USERNAME}:${dbConfig.PWD}@cluster0.3wtmc.mongodb.net/${dbConfig.DB}?retryWrites=true&w=majority`,{
