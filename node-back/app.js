@@ -6,8 +6,8 @@ const mongoose = require("mongoose");
 
 
 const platRoutes = require('./api/routes/plat.route');
-const userRoutes = require('./api/routes/user.route');
-const authRoutes = require('./api/routes/auth.routes');
+// const userRoutes = require('./api/routes/user.route');
+// const authRoutes = require('./api/routes/auth.routes');
 const dbConfig = require('./api/config/db.config');
 const db = require("./api/models");
 
