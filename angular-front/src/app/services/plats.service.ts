@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plat } from '../models/plat';
-const baseUrl = 'https://m1p9mean-herytoavina.herokuapp.com/plats';
+const baseUrl = 'https://m1p9mean-herytoavina.herokuapp.com/api/plats';
 
 @Injectable({
   providedIn: 'root'

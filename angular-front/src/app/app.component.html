@@ -1,2 +1,15 @@
-
-<router-outlet></router-outlet>
+<div id="app">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+            {{ username }}
+        </li>
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
