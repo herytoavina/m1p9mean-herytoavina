@@ -14,7 +14,9 @@ import { BoardAdminComponent } from './components/board-admin/board-admin.compon
 import { BoardDelivererComponent } from './components/board-deliverer/board-deliverer.component';
 import { BoardUserComponent } from './components/board-user/board-user.component';
 import { LoginComponent } from './components/login/login.component';
-import { AuthInterceptor, authInterceptorProviders } from './helpers/auth.interceptor';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { AuthInterceptor, authInterceptorProviders } from './helpers/auth.interc
   BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [
     authInterceptorProviders
